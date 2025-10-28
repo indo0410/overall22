@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-day/날짜 계산기 - 간편한 도구</title>
+    <meta name="description" content="무료 온라인 D-day/날짜 계산기. 특정 날짜로부터 며칠째인지, 며칠 후 날짜, 남은 날짜를 계산할 수 있습니다.">
+    <meta name="keywords" content="D-day, 날짜, 계산기, 일정, 기념일">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dday.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+    body {
+        background: #fff !important;
+    }
+    .main-content-box {
+        background: #fff;
+        border: 1.5px solid #e0e0e0;
+        border-radius: 2rem;
+        box-shadow: 0 8px 32px 0 rgba(60,60,60,0.10);
+        max-width: 900px;
+        margin: 36px auto 36px auto;
+        padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+    }
+    @media (max-width: 991.98px) {
+        .main-content-box {
+            padding: 1.2rem 0.7rem;
+            border-radius: 1.1rem;
+        }
+    }
+    </style>
+    <header class="site-header" style="margin-top:0; padding-top:0;">
+            <nav class="main-nav navbar navbar-expand-lg navbar-light" style="background:#14532d !important; margin:0; padding:0; border:none; min-height:72px; color:#fff !important;">
+                <div class="container-fluid" style="min-height:56px;">
+                    <span class="site-title navbar-brand fw-bold" style="font-size:1.5rem; letter-spacing:-1px; margin:0; padding:0 2.5rem 0 0; color:#fff;">간편한 도구</span>
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainNavbar">
+                        <ul class="navbar-nav ms-auto mb-0">
+                            <li class="nav-item"><a class="nav-link soft-menu" href="index.html">글자수세기</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle soft-menu" href="#" id="healthDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">건강</a>
+                                <ul class="dropdown-menu" aria-labelledby="healthDropdown">
+                                    <li><a class="dropdown-item" href="indexss.html">BMI 계산기</a></li>
+                                    <li><a class="dropdown-item" href="bmr.html">기초대사량 계산기</a></li>
+                                    <li><a class="dropdown-item" href="calorie.html">운동 칼로리 계산기</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link soft-menu" href="converter.html">단위변환기</a></li>
+                            <li class="nav-item"><a class="nav-link soft-menu" href="lottery.html">제비뽑기</a></li>
+                            <li class="nav-item"><a class="nav-link soft-menu" href="#">일상편의</a></li>
+                            <li class="nav-item"><a class="nav-link soft-menu" href="#">재태크</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    </header>
+    <style>
+    .site-header {
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,0.06);
+        border-bottom: 1px solid #e0e0e0;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    body {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    .site-title {
+        font-weight: 700;
+        font-size: 1.35rem;
+        letter-spacing: -1px;
+        color: #fff;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        align-items: center;
+    }
+    .navbar-nav .nav-link {
+        color: #fff !important;
+        font-weight: 500;
+        padding: 7px 18px;
+        border-radius: 1.2rem;
+        transition: background 0.18s, color 0.18s;
+    }
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus, .navbar-nav .show > .nav-link {
+        background: #e6f4fa;
+        color: #0078d7 !important;
+    }
+    .navbar-nav .dropdown-menu {
+        background: #fff;
+        border-radius: 1rem;
+        min-width: 200px;
+        box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+        padding: 0.5rem 0;
+    }
+    .navbar-nav .dropdown-item {
+        color: #222 !important;
+        font-weight: 500;
+        border-radius: 0.7rem;
+        padding: 8px 18px;
+        transition: background 0.18s, color 0.18s;
+    }
+    .navbar-nav .dropdown-item:hover, .navbar-nav .dropdown-item:focus {
+        background: #e6f4fa;
+        color: #0078d7 !important;
+    }
+    .navbar-toggler {
+        border: none;
+        outline: none;
+    }
+    @media (max-width: 991.98px) {
+        .navbar-nav .nav-link {
+            border-radius: 0.7rem;
+            padding: 8px 12px;
+        }
+        .navbar-nav .dropdown-menu {
+            min-width: 150px;
+        }
+    }
+    </style>
+
+    <div class="main-title-under-header" style="background:transparent;">
+    <section class="page-title-section text-center py-4" style="margin-bottom:0; margin-top:2.5rem;">
+            <h1 class="mb-0" style="color:#111; text-align:center;">D-day/날짜 계산기</h1>
+        </section>
+    </div>
+    <main class="container">
+        <div class="main-content-box">
+            <div class="dday-section">
+                <h2>1. 특정 날짜로부터 오늘은 몇일째?</h2>
+                <form id="fromDateForm">
+                    <input type="text" id="fromDate" required pattern="\\d{8}|\\d{4}-\\d{2}-\\d{2}" placeholder="YYYYMMDD 또는 달력선택" onfocus="this.type='date'" onblur="if(this.value===''){this.type='text'}" style="width:140px;">
+                    <button type="submit">계산하기</button>
+                </form>
+                <div id="fromDateResult" class="result"></div>
+            </div>
+            <div class="dday-section">
+                <h2>2. 특정 날짜로부터 N일째 되는 날짜는?</h2>
+                <form id="addDaysForm">
+                    <input type="text" id="baseDate" required pattern="\\d{8}|\\d{4}-\\d{2}-\\d{2}" placeholder="YYYYMMDD 또는 달력선택" onfocus="this.type='date'" onblur="if(this.value===''){this.type='text'}" style="width:140px;">
+                    <input type="number" id="addDays" min="1" max="10000" required placeholder="며칠 후?">
+                    <button type="submit">계산하기</button>
+                </form>
+                <div id="addDaysResult" class="result"></div>
+            </div>
+            <div class="dday-section">
+                <h2>3. 특정 날짜까지 오늘부터 남은 날짜는?</h2>
+                <form id="toDateForm">
+                    <input type="text" id="toDate" required pattern="\\d{8}|\\d{4}-\\d{2}-\\d{2}" placeholder="YYYYMMDD 또는 달력선택" onfocus="this.type='date'" onblur="if(this.value===''){this.type='text'}" style="width:140px;">
+                    <button type="submit">계산하기</button>
+                </form>
+                <div id="toDateResult" class="result"></div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dday.js"></script>
+</body>
+</html>

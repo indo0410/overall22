@@ -1,0 +1,43 @@
+/* BMI Bar Graph Styles */
+.bmi-bar-container {
+    margin-top: 24px;
+    width: 100%;
+    background: #e0e6ed;
+    border-radius: 8px;
+    height: 32px;
+    position: relative;
+    overflow: hidden;
+}
+.bmi-bar {
+    height: 100%;
+    border-radius: 8px 0 0 8px;
+    background: linear-gradient(90deg, #4fc3f7 0%, #81c784 40%, #ffd54f 60%, #ffb74d 75%, #e57373 90%, #d32f2f 100%);
+    transition: width 0.7s cubic-bezier(.4,2,.6,1);
+}
+.bmi-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    color: #666;
+}
+.bmi-bar-pointer {
+    position: absolute;
+    top: -28px; /* Move pointer just above the bar */
+    width: 0;
+    height: 32px;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+.bmi-bar-pointer-arrow {
+    position: absolute;
+    left: -12px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 18px solid #0078d7;
+}
+

@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체질량 계산기 - 간편한 도구</title>
+    <meta name="description" content="무료 온라인 BMI(체질량지수) 계산기. 신장과 체중을 입력하면 BMI와 비만 기준표를 확인할 수 있습니다.">
+    <meta name="keywords" content="BMI, 체질량지수, 비만, 건강, 계산기">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bmi-bar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+    body {
+        background: #fff !important;
+    }
+    .main-content-box {
+        background: #fff;
+        border: 1.5px solid #e0e0e0;
+        border-radius: 2rem;
+        box-shadow: 0 8px 32px 0 rgba(60,60,60,0.10);
+        max-width: 900px;
+        margin: 36px auto 36px auto;
+        padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+    }
+    @media (max-width: 991.98px) {
+        .main-content-box {
+            padding: 1.2rem 0.7rem;
+            border-radius: 1.1rem;
+        }
+    }
+    </style>
+    <header class="site-header" style="margin-top:0; padding-top:0;">
+    <nav class="main-nav navbar navbar-expand-lg" style="background:#14532d !important; margin:0; padding:0; border:none; min-height:72px; color:#fff !important;">
+            <div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; width:100%; min-height:56px; margin:0; padding:0;">
+                <span class="site-title navbar-brand fw-bold" style="font-size:1.5rem; letter-spacing:-1px; margin:0; padding:0 2.5rem 0 0;">간편한 도구</span>
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse flex-grow-0" id="mainNavbar">
+                    <ul class="navbar-nav mb-0 align-items-center responsive-menu" style="gap:0.5rem; margin:0; padding:0; list-style:none;">
+                        <li class="nav-item"><a class="nav-link soft-menu" href="index.html">글자수세기</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle soft-menu" href="#" id="healthDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">건강</a>
+                            <ul class="dropdown-menu" aria-labelledby="healthDropdown">
+                                <li><a class="dropdown-item" href="indexss.html">BMI 계산기</a></li>
+                                <li><a class="dropdown-item" href="bmr.html">기초대사량 계산기</a></li>
+                                <li><a class="dropdown-item" href="calorie.html">운동 칼로리 계산기</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link soft-menu" href="converter.html">단위변환기</a></li>
+                        <li class="nav-item"><a class="nav-link soft-menu" href="lottery.html">제비뽑기</a></li>
+                        <li class="nav-item"><a class="nav-link soft-menu" href="#">일상편의</a></li>
+                        <li class="nav-item"><a class="nav-link soft-menu" href="#">재태크</a></li>
+                    </ul>
+                </div>
+                <style>
+                .soft-menu, .soft-menu:hover, .soft-menu:focus, .soft-menu:active {
+                    border-bottom: none !important;
+                    text-decoration: none !important;
+                }
+                <style>
+                .site-header {
+                    min-height: 80px;
+                    background: #14532d !important;
+                    color: #fff !important;
+                    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+                    border-bottom: none !important;
+                    border-radius: 0 0 1.5rem 1.5rem;
+                }
+                .site-header .site-title,
+                .site-header .soft-menu {
+                    color: #fff !important;
+                }
+                .site-header .soft-menu:hover, .site-header .soft-menu:focus, .site-header .soft-menu:active {
+                    background: rgba(255,255,255,0.18) !important;
+                    color: #fff !important;
+                }
+                .site-header ul.responsive-menu {
+                    display: flex !important;
+                    flex-direction: row !important;
+                    align-items: center !important;
+                    justify-content: flex-end !important;
+                    width: auto !important;
+                    gap: 2.5rem !important;
+                }
+                .site-header ul.responsive-menu li {
+                    margin: 0;
+                }
+                .soft-menu {
+                    background: none !important;
+                    border: none !important;
+                    color: #222 !important;
+                    font-family: 'Noto Sans KR', Arial, sans-serif !important;
+                    font-weight: 700 !important;
+                    font-size: 1.08rem !important;
+                    padding: 0.3rem 0.9rem 0.3rem 0.9rem !important;
+                    border-radius: 1.2rem !important;
+                    box-shadow: none !important;
+                    letter-spacing: -1px;
+                    position: relative;
+                    overflow: hidden;
+                    transition: color 0.18s, background 0.18s, font-weight 0.18s;
+                }
+                .soft-menu:hover, .soft-menu:focus, .soft-menu:active {
+                    color: #1a237e !important;
+                    background: rgba(255,255,255,0.85) !important;
+                    font-weight: 700 !important;
+                    box-shadow: 0 2px 8px 0 rgba(30,64,175,0.06);
+                }
+                @media (max-width: 991.98px) {
+                    .site-header ul.responsive-menu {
+                        flex-direction: column !important;
+                        align-items: flex-start !important;
+                        width: 100% !important;
+                        margin-top: 0.5rem;
+                        gap: 0.2rem !important;
+                    }
+                    .site-header ul.responsive-menu li {
+                        margin: 0.2rem 0;
+                    }
+                    .soft-menu {
+                        font-size: 1.08rem !important;
+                        padding: 0.7rem 0.5rem !important;
+                        border-radius: 0.7rem !important;
+                        text-align: left;
+                    }
+                }
+                </style>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <style>
+    .site-header {
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,0.06);
+        border-bottom: 1px solid #e0e0e0;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    body {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    .site-title {
+        font-weight: 700;
+        font-size: 1.35rem;
+        letter-spacing: -1px;
+        color: #222;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        align-items: center;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        color: #222;
+        font-weight: 500;
+        padding: 7px 18px;
+        border-radius: 1.2rem;
+        transition: background 0.18s, color 0.18s;
+    }
+    .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .show > .nav-link {
+        background: #e6f4fa;
+        color: #0078d7;
+    }
+        .navbar-light .navbar-nav .nav-link {
+            margin-left: 0.1rem;
+            margin-right: 0.1rem;
+        }
+        .navbar-light .navbar-nav.flex-row {
+            flex-direction: row !important;
+        }
+        @media (max-width: 991.98px) {
+            .navbar-light .navbar-nav.flex-row {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+        }
+    .navbar-light .navbar-nav .dropdown-menu {
+        background: #fff;
+        border-radius: 1rem;
+        min-width: 200px;
+        box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+        padding: 0.5rem 0;
+    }
+    .navbar-light .navbar-nav .dropdown-item {
+        color: #222;
+        font-weight: 500;
+        border-radius: 0.7rem;
+        padding: 8px 18px;
+        transition: background 0.18s, color 0.18s;
+    }
+    .navbar-light .navbar-nav .dropdown-item:hover, .navbar-light .navbar-nav .dropdown-item:focus {
+        background: #e6f4fa;
+        color: #0078d7;
+    }
+    .navbar-toggler {
+        border: none;
+        outline: none;
+    }
+    @media (max-width: 991.98px) {
+        .navbar-nav {
+            gap: 0.2rem !important;
+        }
+        .navbar-light .navbar-nav .nav-link {
+            border-radius: 0.7rem;
+            padding: 8px 12px;
+        }
+        .navbar-light .navbar-nav .dropdown-menu {
+            min-width: 150px;
+        }
+    }
+    </style>
+
+    <div class="main-title-under-header" style="background:transparent;">
+    <section class="page-title-section text-center py-4" style="margin-bottom:0; margin-top:2.5rem;">
+            <h1 class="mb-0" style="color:#111; text-align:center;">나의 체질량지수(BMI) 계산기</h1>
+            <p class="subtitle" style="color:#111; text-align:center;">신장과 체중을 입력하고 BMI와 비만 기준표를 확인하세요.</p>
+        </section>
+    </div>
+    <main class="container">
+        <div class="main-content-box">
+            <section class="bmi-section py-4">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <form id="bmiForm" class="mb-3">
+                            <div class="mb-3">
+                                <label for="height" class="form-label">신장 (cm)</label>
+                                <input type="number" id="height" name="height" min="50" max="250" required class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="weight" class="form-label">체중 (kg)</label>
+                                <input type="number" id="weight" name="weight" min="10" max="200" required class="form-control">
+                            </div>
+                            <div class="button-group d-flex gap-2">
+                                <button type="submit" class="btn btn-primary flex-fill">계산하기</button>
+                                <button type="button" id="resetBtn" class="btn btn-secondary flex-fill">초기화</button>
+                            </div>
+                        </form>
+                        <div id="result" class="result"></div>
+                        <div id="bmiBarGraph"></div>
+                        <div class="bmi-table mt-4">
+                            <h2>비만 기준표</h2>
+                            <table class="table table-bordered table-sm bg-light">
+                                <thead>
+                                    <tr><th>BMI</th><th>분류</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>18.5 미만</td><td>저체중</td></tr>
+                                    <tr><td>18.5 ~ 22.9</td><td>정상</td></tr>
+                                    <tr><td>23.0 ~ 24.9</td><td>과체중</td></tr>
+                                    <tr><td>25.0 ~ 29.9</td><td>비만 1단계</td></tr>
+                                    <tr><td>30.0 ~ 34.9</td><td>비만 2단계</td></tr>
+                                    <tr><td>35.0 이상</td><td>비만 3단계</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bmi.js"></script>
+    <script src="assets/js/bmi-bar.js"></script>
+</body>
+</html>

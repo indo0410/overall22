@@ -1,0 +1,28 @@
+/* Converter Page Styles */
+#unitFields {
+    margin: 18px 0 10px 0;
+}
+.converter-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.converter-row label {
+    min-width: 60px;
+    font-size: 1rem;
+    color: #333;
+}
+.converter-row input[type="number"] {
+    width: 120px;
+    padding: 6px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+.converter-row select {
+    padding: 6px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}

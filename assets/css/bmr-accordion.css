@@ -1,0 +1,38 @@
+/* Accordion styles for BMR page */
+.accordion {
+    margin-top: 32px;
+    border-radius: 8px;
+    background: #f7f9fa;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 8px 0;
+}
+.accordion-item + .accordion-item {
+    border-top: 1px solid #e0e6ed;
+}
+.accordion-title {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0078d7;
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 8px 8px 0 0;
+}
+.accordion-title:hover, .accordion-title.active {
+    background: #e0e6ed;
+}
+.accordion-content {
+    display: none;
+    padding: 0 18px 16px 18px;
+    color: #333;
+    font-size: 0.97rem;
+    background: none;
+}
+.accordion-content.open {
+    display: block;
+}

@@ -1,0 +1,38 @@
+/* D-day Calculator Styles */
+.dday-section {
+    margin-bottom: 32px;
+    background: #f3f6fa;
+    border-radius: 8px;
+    padding: 18px 16px 10px 16px;
+}
+.dday-section h2 {
+    font-size: 1.08rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+.dday-section form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+.dday-section input[type="date"],
+.dday-section input[type="number"] {
+    padding: 7px 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+.dday-section button {
+    padding: 7px 18px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    background: #0078d7;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.dday-section button:hover {
+    background: #005fa3;
+}
