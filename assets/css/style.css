@@ -1,18 +1,90 @@
+.navbar-nav .dropdown-menu .dropdown-item {
+    padding-top: 1.1rem !important;
+    padding-bottom: 1.1rem !important;
+    text-decoration: none !important;
+}
+.navbar-nav .dropdown-menu .dropdown-item:hover,
+.navbar-nav .dropdown-menu .dropdown-item:focus,
+.navbar-nav .dropdown-menu .dropdown-item:active {
+    text-decoration: none !important;
+}
+.navbar-nav .dropdown-menu .dropdown-item {
+    font-family: 'Noto Sans KR', Arial, sans-serif !important;
+    font-weight: 700 !important;
+    color: #14532d !important;
+}
+.navbar-nav .dropdown-menu {
+    background: #fff !important;
+    box-shadow: 0 8px 32px 0 rgba(60,60,60,0.13) !important;
+    border-radius: 1rem;
+}
+.navbar-nav .dropdown-menu {
+    /* Mobile: static so it pushes content, desktop: absolute for floating */
+    position: static;
+    margin-top: 0;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+}
+@media (min-width: 992px) {
+    .navbar-nav .dropdown {
+        position: relative;
+    }
+    .navbar-nav .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: auto;
+        min-width: 200px;
+        z-index: 1000;
+        margin-top: 0.2rem;
+        display: none;
+    }
+    .navbar-nav .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+    .navbar-nav .dropdown.show .dropdown-menu,
+    .navbar-nav .dropdown-menu.show {
+        display: block;
+    }
+}
 /* Dropdown hover support for 건강 메뉴 (desktop only) */
 @media (min-width: 992px) {
-    .navbar-nav .dropdown:hover .dropdown-menu {
+    .navbar-nav .dropdown:hover > .dropdown-menu {
         display: block;
-        margin-top: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 0.2rem;
+        min-width: 200px;
+        z-index: 1000;
     }
 }
 .navbar-nav .dropdown .dropdown-toggle:after {
-        margin-left: 0.3em;
+    margin-left: 0.3em;
 }
 /* Force navbar menu to horizontal alignment at the top */
 .navbar-nav {
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-end !important;
+}
+
+/* Ensure dropdown-menu is hidden by default and absolutely positioned */
+.navbar-nav .dropdown {
+    position: relative;
+}
+.navbar-nav .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: auto;
+    min-width: 200px;
+    z-index: 1000;
+    margin-top: 0.2rem;
+}
+.navbar-nav .dropdown.show .dropdown-menu,
+.navbar-nav .dropdown-menu.show {
+    display: block;
 }
 @font-face {
     font-family: 'Aggravo';
